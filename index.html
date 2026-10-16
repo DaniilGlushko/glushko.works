@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Daniil Glushko — Russia and Asia: negotiations, partners, projects</title>
-<meta name="description" content="Daniil Glushko represents Russian companies in Asia and Asian partners in Russia. Moscow, Hong Kong, Manila.">
+<meta name="description" content="Daniil Glushko represents Russian companies in Asia and Asian partners in Russia. Moscow, Hong Kong, Manila, Bahrain.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E3B4A'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23D9A441'%3EDG%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://glushko.works/">
 <meta property="og:title" content="Daniil Glushko — Russian companies in Asia. Asian partners in Russia.">
-<meta property="og:description" content="Negotiations, partners, government relations and follow-through until a deal becomes a working project. Moscow, Hong Kong, Manila.">
+<meta property="og:description" content="Negotiations, partners, government relations and follow-through until a deal becomes a working project. Moscow, Hong Kong, Manila, Bahrain.">
 <meta property="og:image" content="https://glushko.works/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +64,59 @@ img{max-width:100%;display:block}
 .hero .cta{display:inline-block;margin-top:40px;background:#fff;color:#15211F;text-decoration:none;font-weight:600;padding:15px 30px;border-radius:999px}
 .hero .cta:hover{background:var(--sun)}
 .hero .cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.hero .reply{margin-top:16px;font-size:14px;color:rgba(255,255,255,.75)}
+
+/* facts strip */
+.facts{padding:0;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:36px;padding-bottom:36px}
+.facts b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,42px);line-height:1;color:var(--ink)}
+.facts .wrap>div>span{display:block;margin-top:8px;font-size:14px;color:var(--ink-2);max-width:22ch}
+
+/* situations */
+.sit{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+.sit h3{font-size:25px;font-weight:400;margin-bottom:22px}
+.sit ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.sit li{position:relative;padding:14px 0 14px 24px;border-bottom:1px solid var(--line);color:var(--ink-2);max-width:50ch}
+.sit li::before{content:"";position:absolute;left:0;top:24px;width:8px;height:8px;border-radius:50%;background:var(--sun)}
+
+/* how I work */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:32px 28px}
+.steps li{counter-increment:step;padding-top:18px;border-top:1px solid var(--line);position:relative}
+.steps li::before{content:counter(step);font-family:var(--serif);font-size:34px;font-weight:300;color:var(--sun);line-height:1;display:block;margin-bottom:14px}
+.steps h3{font-size:20px;font-weight:500;font-family:var(--sans);margin-bottom:8px}
+.steps p{color:var(--ink-2);font-size:16px}
+.formats{margin-top:72px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px}
+.formats div{background:var(--paper-2);padding:28px 28px 30px}
+.formats h3{font-size:22px;font-weight:400;margin-bottom:8px}
+.formats small{display:block;color:var(--sun);font-size:14px;margin-bottom:12px}
+.formats p{color:var(--ink-2);font-size:16px}
+.formats-note{margin-top:22px;color:var(--ink-2);font-size:15px}
+
+/* markets */
+.about .markets{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:repeat(3,1fr);gap:24px 32px;color:rgba(255,255,255,.7);font-size:15px}
+.about .markets b{display:block;color:var(--sun);font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:2px}
+.about .markets em{display:block;font-style:normal;color:#fff;font-size:13px;letter-spacing:.02em;margin-bottom:4px}
+
+/* enquiry form */
+.enq{margin:40px auto 0;max-width:640px;text-align:left;background:rgba(10,24,32,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:32px;border:1px solid rgba(255,255,255,.14)}
+.enq label{display:block;font-size:14px;color:rgba(255,255,255,.75);margin-bottom:6px}
+.enq .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.enq .field{margin-bottom:16px}
+.enq select,.enq input,.enq textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);padding:11px 12px;border-radius:2px}
+.enq select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+.enq select option{color:#15211F;background:#fff}
+.enq textarea{min-height:110px;resize:vertical}
+.enq input::placeholder,.enq textarea::placeholder{color:rgba(255,255,255,.45)}
+.enq select:focus-visible,.enq input:focus-visible,.enq textarea:focus-visible{outline:2px solid var(--sun);outline-offset:1px;border-color:var(--sun)}
+.enq .check{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,.85);margin:4px 0 22px}
+.enq .check input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--sun)}
+.enq .send{display:flex;gap:10px;flex-wrap:wrap}
+.enq .send button{appearance:none;font:inherit;font-weight:600;font-size:15px;cursor:pointer;padding:12px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.6);background:transparent;color:#fff}
+.enq .send button.primary{background:#fff;color:#15211F;border-color:#fff}
+.enq .send button:hover{background:var(--sun);color:#15211F;border-color:var(--sun)}
+.enq .send button:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.enq .status{margin-top:14px;font-size:14px;color:var(--sun);min-height:1.4em}
+.contact .reply{margin-top:22px;font-size:15px;color:rgba(255,255,255,.85)}
 .clocks{display:flex;justify-content:center;gap:56px;margin-top:72px}
 .clock{display:grid;gap:4px;text-align:center}
 .clock .city{font-size:14px;color:rgba(255,255,255,.75)}
@@ -123,6 +176,13 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
   .bar nav{display:none}
   .bar .right{gap:0}
   .svc{grid-template-columns:1fr}
+  .facts .wrap{grid-template-columns:1fr 1fr;gap:28px 16px}
+  .sit ul{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .formats{grid-template-columns:1fr}
+  .about .markets{grid-template-columns:1fr 1fr}
+  .enq{padding:22px}
+  .enq .row{grid-template-columns:1fr}
   .case{grid-template-columns:1fr;gap:4px}
   .about .grid{grid-template-columns:1fr;gap:32px}
   .about img{max-width:300px}
@@ -140,6 +200,7 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
     <div class="right">
       <nav>
         <a href="#services"><span lang="en">Services</span><span lang="ru">Услуги</span></a>
+        <a href="#how"><span lang="en">How I work</span><span lang="ru">Как работаю</span></a>
         <a href="#work"><span lang="en">Work</span><span lang="ru">Опыт</span></a>
         <a href="#about"><span lang="en">About</span><span lang="ru">Обо мне</span></a>
         <a href="#contact"><span lang="en">Contact</span><span lang="ru">Контакт</span></a>
@@ -155,8 +216,9 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
 <div class="hero">
   <div class="wrap">
     <h1><span lang="en">Russian companies in Asia. Asian partners in Russia.</span><span lang="ru">Российские компании в Азии. Азиатские партнёры в России.</span></h1>
-    <p class="lead"><span lang="en">I represent companies in markets where they have no one of their own: negotiations, partner search, government relations, and the follow-through until a deal becomes a working project. Moscow, Hong Kong, Manila.</span><span lang="ru">Представляю компании там, где у них нет своих людей: переговоры, поиск партнёров, работа с госорганами и сопровождение до тех пор, пока сделка не станет работающим проектом. Москва, Гонконг, Манила.</span></p>
-    <a class="cta" href="mailto:daniil@glushko.works"><span lang="en">Get in touch</span><span lang="ru">Написать мне</span></a>
+    <p class="lead"><span lang="en">I represent companies in markets where they have no one of their own: negotiations, partner search, government relations, and the follow-through until a deal becomes a working project. Moscow, Hong Kong, Manila, Bahrain.</span><span lang="ru">Представляю компании там, где у них нет своих людей: переговоры, поиск партнёров, работа с госорганами и сопровождение до тех пор, пока сделка не станет работающим проектом. Москва, Гонконг, Манила, Бахрейн.</span></p>
+    <a class="cta" href="#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
+    <p class="reply"><span lang="en">I reply personally within one business day.</span><span lang="ru">Отвечаю лично в течение рабочего дня.</span></p>
     <div class="clocks" aria-label="Current time">
       <div class="clock"><span class="city"><span lang="en">Moscow</span><span lang="ru">Москва</span></span><span class="time" id="t-msk">—</span></div>
       <div class="clock"><span class="city"><span lang="en">Hong Kong, Manila</span><span lang="ru">Гонконг, Манила</span></span><span class="time" id="t-hkg">—</span></div>
@@ -165,6 +227,15 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
 </div>
 
 <main>
+
+<div class="facts" aria-label="In numbers">
+  <div class="wrap">
+    <div><b>10+</b><span><span lang="en">years running cross-border projects</span><span lang="ru">лет в международных проектах</span></span></div>
+    <div><b>12</b><span><span lang="en">countries in campaigns I've led</span><span lang="ru">стран в кампаниях под моим руководством</span></span></div>
+    <div><b>15</b><span><span lang="en">Asian National Olympic Committees coordinated</span><span lang="ru">национальных олимпийских комитетов Азии</span></span></div>
+    <div><b><span lang="en">USD 3.6M+</span><span lang="ru">300+ млн ₽</span></b><span><span lang="en">in investment projects approved</span><span lang="ru">защищённых инвестиционных проектов</span></span></div>
+  </div>
+</div>
 
 <section id="services">
   <div class="wrap">
@@ -189,23 +260,35 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
         </ul>
       </div>
       <div>
-        <h3><span lang="en">Project delivery</span><span lang="ru">Управление проектами</span></h3>
-        <p><span lang="en">Turning strategy into running programs: PMO, budgets, reporting, vendors. Ten years of delivery inside corporations, universities and agencies.</span><span lang="ru">Стратегия, превращённая в работающие программы: проектный офис, бюджеты, отчётность, подрядчики. Десять лет реализации в корпорациях, университетах и агентствах.</span></p>
+        <h3><span lang="en">Follow-through to the result</span><span lang="ru">Сопровождение до результата</span></h3>
+        <p><span lang="en">After the handshake someone has to own the paperwork, the approvals, the logistics and the numbers. We agree on the finish line in advance: a signed contract, the first shipment, or the project reaching its margin. I stay with the deal until it is there.</span><span lang="ru">После рукопожатия кто-то должен отвечать за документы, согласования, логистику и цифры. Финиш договариваем заранее: подписанный контракт, первая поставка или выход проекта на маржинальность. Я остаюсь в сделке, пока он не достигнут.</span></p>
         <ul>
-          <li><span lang="en">Launching programs from scratch; portfolio governance</span><span lang="ru">Запуск программ с нуля, управление портфелем</span></li>
-          <li><span lang="en">Investment cases and committee approvals</span><span lang="ru">Инвестиционные кейсы и защита перед комитетом</span></li>
-          <li><span lang="en">Management systems and Agile rollouts</span><span lang="ru">Внедрение управленческих инструментов и Agile</span></li>
+          <li><span lang="en">Product registration, permits and quotas</span><span lang="ru">Регистрация продукта, разрешения и квоты</span></li>
+          <li><span lang="en">Contract terms, payment and trading structure</span><span lang="ru">Условия контракта, расчёты и торговая структура</span></li>
+          <li><span lang="en">Logistics, customs and unit economics until the project pays</span><span lang="ru">Логистика, таможня и экономика до тех пор, пока проект не начнёт приносить деньги</span></li>
         </ul>
       </div>
       <div>
-        <h3><span lang="en">Events and educational programs</span><span lang="ru">Мероприятия и образовательные программы</span></h3>
-        <p><span lang="en">Conferences, championships, international campaigns and programs for gifted students: from concept and budget to the final report.</span><span lang="ru">Конференции, чемпионаты, международные кампании и школы для талантливой молодёжи: от концепции и бюджета до итогового отчёта.</span></p>
+        <h3><span lang="en">Educational infrastructure</span><span lang="ru">Образовательная инфраструктура</span></h3>
+        <p><span lang="en">Programs and institutions built from scratch and run for years, plus educational products made to order: scientific conferences, bootcamps, residential camps for gifted students, Master's programs, corporate talent pipelines. From concept and budget to the final report.</span><span lang="ru">Программы и институты, созданные с нуля и работающие годами, и образовательные продукты на заказ: научные конференции, буткемпы, образовательные смены для талантливой молодёжи, магистратуры, корпоративные кадровые программы. От концепции и бюджета до итогового отчёта.</span></p>
         <ul>
-          <li><span lang="en">National and international events</span><span lang="ru">Федеральные и международные мероприятия</span></li>
-          <li><span lang="en">Partnerships with universities and foundations</span><span lang="ru">Партнёрства с университетами и фондами</span></li>
-          <li><span lang="en">Corporate talent programs</span><span lang="ru">Корпоративные программы развития талантов</span></li>
+          <li><span lang="en">Scientific conferences, bootcamps and educational camps</span><span lang="ru">Научные конференции, буткемпы и образовательные смены</span></li>
+          <li><span lang="en">Master's programs, schools and olympiads set up from zero</span><span lang="ru">Магистратуры, школы и олимпиады с нуля</span></li>
+          <li><span lang="en">University and foundation partnerships, incl. cross-border</span><span lang="ru">Партнёрства с университетами и фондами, в том числе международные</span></li>
+          <li><span lang="en">Custom educational products for companies and corporate academies</span><span lang="ru">Образовательные продукты на заказ для компаний и корпоративных академий</span></li>
         </ul>
       </div>
+    </div>
+    <div class="sit">
+      <h3><span lang="en">When companies call me</span><span lang="ru">С чем ко мне приходят</span></h3>
+      <ul>
+        <li><span lang="en">Talks with a ministry or regulator have stalled and no one knows who actually decides.</span><span lang="ru">Переговоры с министерством или регулятором встали, и непонятно, кто на самом деле решает.</span></li>
+        <li><span lang="en">You need a local partner for a joint venture, not just another distributor.</span><span lang="ru">Нужен локальный партнёр для совместного предприятия, а не ещё один дистрибьютор.</span></li>
+        <li><span lang="en">Product registration or import permits have been pending for months.</span><span lang="ru">Регистрация продукта или разрешение на импорт тянутся месяцами.</span></li>
+        <li><span lang="en">A quota, incentive or trading structure has to be settled before the first contract.</span><span lang="ru">Квоту, инвестиционный режим или торговую структуру нужно решить до первого контракта.</span></li>
+        <li><span lang="en">An agreement was signed a while ago, and nothing has shipped.</span><span lang="ru">Соглашение подписано давно, а поставок так и нет.</span></li>
+        <li><span lang="en">An Asian partner wants to work in Russia and needs someone they trust in Moscow.</span><span lang="ru">Азиатский партнёр хочет работать в России, и ему нужен свой человек в Москве.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -215,6 +298,52 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
     <p><span lang="en">A deal is only as good as the first shipment that clears customs.</span><span lang="ru">Сделка стоит ровно столько, сколько первая поставка, прошедшая таможню.</span></p>
   </div>
 </div>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="title"><span lang="en">How I work</span><span lang="ru">Как я работаю</span></h2>
+    <ol class="steps">
+      <li>
+        <h3><span lang="en">Diagnostic</span><span lang="ru">Диагностика</span></h3>
+        <p><span lang="en">Two weeks. Who decides, who is worth meeting, what is realistic in this market and what is not. A written assessment you can act on with or without me.</span><span lang="ru">Две недели. Кто решает, с кем стоит встречаться, что реально на этом рынке, а что нет. Письменная оценка, с которой можно работать со мной или без меня.</span></p>
+      </li>
+      <li>
+        <h3><span lang="en">Partners and doors</span><span lang="ru">Партнёры и двери</span></h3>
+        <p><span lang="en">A shortlist of partners, distributors or co-investors and warm introductions to the people behind them. First meetings in person.</span><span lang="ru">Шорт-лист партнёров, дистрибьюторов или соинвесторов и тёплые знакомства с людьми, которые за ними стоят. Первые встречи вживую.</span></p>
+      </li>
+      <li>
+        <h3><span lang="en">Negotiations and approvals</span><span lang="ru">Переговоры и согласования</span></h3>
+        <p><span lang="en">I sit at the table on your side and take the conversation with ministries, regulators and associations through to agreed terms.</span><span lang="ru">Сижу за столом на вашей стороне и веду разговор с министерствами, регуляторами и ассоциациями до согласованных условий.</span></p>
+      </li>
+      <li>
+        <h3><span lang="en">Structure</span><span lang="ru">Структура сделки</span></h3>
+        <p><span lang="en">Trading company, incentives, quotas, contract and payment terms, so the deal works on paper in both jurisdictions.</span><span lang="ru">Торговая компания, инвестиционные режимы, квоты, условия контракта и расчётов, чтобы сделка работала на бумаге в обеих юрисдикциях.</span></p>
+      </li>
+      <li>
+        <h3><span lang="en">The agreed result</span><span lang="ru">Оговорённый результат</span></h3>
+        <p><span lang="en">Permits, logistics, customs, numbers. I stay until the finish line we set: a signed contract, the first shipment, or the project reaching its margin, and both sides have a reason to do it again.</span><span lang="ru">Разрешения, логистика, таможня, цифры. Остаюсь до оговорённого финиша: подписанный контракт, первая поставка или выход на маржинальность, и пока у обеих сторон не появится причина повторить.</span></p>
+      </li>
+    </ol>
+    <div class="formats">
+      <div>
+        <h3><span lang="en">Representative on retainer</span><span lang="ru">Представитель на ретейнере</span></h3>
+        <small><span lang="en">Monthly, from three months</span><span lang="ru">Помесячно, от трёх месяцев</span></small>
+        <p><span lang="en">Your person in the country: meetings, correspondence, government relations and partners, with a weekly report to the owner.</span><span lang="ru">Ваш человек в стране: встречи, переписка, госорганы и партнёры, с еженедельным отчётом собственнику.</span></p>
+      </div>
+      <div>
+        <h3><span lang="en">Deal mandate</span><span lang="ru">Мандат на сделку</span></h3>
+        <small><span lang="en">Fixed scope, from search to the agreed result</span><span lang="ru">Фиксированный объём, от поиска до оговорённого результата</span></small>
+        <p><span lang="en">One deal, one owner. The finish line is set up front: contract, first shipment or margin. Part of the fee is tied to reaching it, not to the hours spent.</span><span lang="ru">Одна сделка, один ответственный. Финиш задаём заранее: контракт, первая поставка или маржинальность. Часть вознаграждения привязана к результату, а не к потраченным часам.</span></p>
+      </div>
+      <div>
+        <h3><span lang="en">Diagnostic</span><span lang="ru">Диагностика</span></h3>
+        <small><span lang="en">Two weeks, written</span><span lang="ru">Две недели, письменно</span></small>
+        <p><span lang="en">A market, a partner or a stalled negotiation assessed before you commit money and people.</span><span lang="ru">Оценка рынка, партнёра или зависших переговоров до того, как вы вложите деньги и людей.</span></p>
+      </div>
+    </div>
+    <p class="formats-note"><span lang="en">Fees are set per mandate after the diagnostic. I take on a small number of mandates at a time and say so if yours is not one I can do well.</span><span lang="ru">Стоимость определяется по каждому мандату после диагностики. Веду несколько мандатов одновременно и прямо говорю, если ваш не смогу сделать хорошо.</span></p>
+  </div>
+</section>
 
 <section id="work">
   <div class="wrap">
@@ -280,11 +409,13 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
         <h2><span lang="en">About</span><span lang="ru">Обо мне</span></h2>
         <p><span lang="en">Every project I've run had two sides that did not speak the same language: a state corporation and a university, an agency and an international federation, a Russian producer and an Asian regulator. My work is to be the one person both sides trust, and to keep the deal moving after the handshake.</span><span lang="ru">В каждом моём проекте были две стороны, которые говорили на разных языках: госкорпорация и университет, агентство и международная федерация, российский производитель и азиатский регулятор. Моя работа — быть человеком, которому доверяют обе стороны, и двигать сделку дальше после рукопожатия.</span></p>
         <p><span lang="en">I prepare the ground before a meeting, sit at the table during it, and take ownership of what was agreed afterwards: documents, approvals, partners, first deliveries. Companies work with me when they need someone on the other side of the border who is accountable for the result, not the process.</span><span lang="ru">Я готовлю почву до встречи, сижу за столом во время неё и отвечаю за договорённости после: документы, согласования, партнёры, первые поставки. Со мной работают, когда по ту сторону границы нужен человек, который отвечает за результат, а не за процесс.</span></p>
-        <p><span lang="en">Moscow is home. Hong Kong is where Russian–Asian trade gets structured. Manila is where I've spent the past few years building relationships in business, pharma and government.</span><span lang="ru">Москва — дом. Гонконг — место, где структурируется торговля между Россией и Азией. Манила — город, где последние годы я строю отношения в бизнесе, фармацевтике и государственных структурах.</span></p>
-        <div class="cities">
-          <div><b><span lang="en">Moscow</span><span lang="ru">Москва</span></b><span lang="en">Home base</span><span lang="ru">База</span></div>
-          <div><b><span lang="en">Hong Kong</span><span lang="ru">Гонконг</span></b><span lang="en">Trading structures and partners</span><span lang="ru">Торговые структуры и партнёры</span></div>
-          <div><b><span lang="en">Manila</span><span lang="ru">Манила</span></b><span lang="en">Network on the ground</span><span lang="ru">Сеть контактов на месте</span></div>
+        <p><span lang="en">Moscow is home. Hong Kong is where Russian–Asian trade gets structured. Manila is where I've spent the past few years building relationships in business, pharma and government. Bahrain is my door to the Gulf.</span><span lang="ru">Москва — дом. Гонконг — место, где структурируется торговля между Россией и Азией. Манила — город, где последние годы я строю отношения в бизнесе, фармацевтике и государственных структурах. Бахрейн — моя дверь в страны Залива.</span></p>
+        <div class="markets">
+          <div><b><span lang="en">Moscow</span><span lang="ru">Москва</span></b><em><span lang="en">Home base</span><span lang="ru">База</span></em><span lang="en">Russian owners, state corporations, universities</span><span lang="ru">Российские собственники, госкорпорации, университеты</span></div>
+          <div><b><span lang="en">Hong Kong</span><span lang="ru">Гонконг</span></b><em><span lang="en">Primary market</span><span lang="ru">Основной рынок</span></em><span lang="en">Trading companies, banking and partners for Russia–Asia trade</span><span lang="ru">Торговые компании, банки и партнёры для торговли Россия–Азия</span></div>
+          <div><b><span lang="en">Manila</span><span lang="ru">Манила</span></b><em><span lang="en">Primary market</span><span lang="ru">Основной рынок</span></em><span lang="en">Network in business and government: Department of Agriculture, BOI, PEZA</span><span lang="ru">Сеть в бизнесе и госорганах: Министерство сельского хозяйства, BOI, PEZA</span></div>
+          <div><b><span lang="en">Bahrain</span><span lang="ru">Бахрейн</span></b><em><span lang="en">Gulf</span><span lang="ru">Персидский залив</span></em><span lang="en">Entry point to GCC partners; halal and food supply chains</span><span lang="ru">Вход к партнёрам в странах Залива; халяль и продовольственные цепочки</span></div>
+          <div><b><span lang="en">Southeast Asia</span><span lang="ru">Юго-Восточная Азия</span></b><em><span lang="en">By referral</span><span lang="ru">По рекомендации</span></em><span lang="en">Selected projects with partners I already work with</span><span lang="ru">Отдельные проекты с партнёрами, с которыми уже работаю</span></div>
         </div>
       </div>
     </div>
@@ -294,12 +425,50 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
 <section id="contact" class="contact">
   <div class="wrap">
     <h2><span lang="en">Tell me what you're working on</span><span lang="ru">Расскажите, над чем работаете</span></h2>
-    <a class="mail" href="mailto:daniil@glushko.works">daniil@glushko.works</a>
+    <form class="enq" id="enq" novalidate>
+      <div class="row">
+        <div>
+          <label for="f-dir"><span lang="en">Direction</span><span lang="ru">Направление</span></label>
+          <select id="f-dir">
+            <option value="ru-asia">Russia → Asia</option>
+            <option value="asia-ru">Asia → Russia</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-mkt"><span lang="en">Market</span><span lang="ru">Рынок</span></label>
+          <select id="f-mkt">
+            <option value="Philippines">Philippines</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Other Asia">Other Asia</option>
+            <option value="Bahrain">Bahrain / Gulf</option>
+            <option value="Russia">Russia</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-msg"><span lang="en">What you are working on</span><span lang="ru">Над чем работаете</span></label>
+        <textarea id="f-msg" placeholder="Product, partner, stage of the talks, what has stalled"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-who"><span lang="en">Your name and company</span><span lang="ru">Имя и компания</span></label>
+        <input id="f-who" type="text" autocomplete="name" placeholder="">
+      </div>
+      <label class="check"><input id="f-call" type="checkbox"><span><span lang="en">A 15-minute call suits me better than writing it all down.</span><span lang="ru">Мне проще обсудить на 15-минутном звонке, чем писать.</span></span></label>
+      <div class="send">
+        <button type="button" class="primary" data-via="mail"><span lang="en">Send by email</span><span lang="ru">Отправить на почту</span></button>
+        <button type="button" data-via="wa"><span lang="en">Send in WhatsApp</span><span lang="ru">Отправить в WhatsApp</span></button>
+        <button type="button" data-via="tg"><span lang="en">Send in Telegram</span><span lang="ru">Отправить в Telegram</span></button>
+      </div>
+      <p class="status" id="f-status" aria-live="polite"></p>
+    </form>
+    <p class="reply"><span lang="en">I reply personally within one business day. Or write directly:</span><span lang="ru">Отвечаю лично в течение рабочего дня. Или напишите напрямую:</span></p>
     <div class="links">
+      <a href="mailto:daniil@glushko.works">daniil@glushko.works</a>
       <a href="https://wa.me/79996570608" target="_blank" rel="noopener">WhatsApp</a>
       <a href="https://t.me/finchmadeit" target="_blank" rel="noopener">Telegram</a>
       <a href="https://www.linkedin.com/in/ddaniilglushko" target="_blank" rel="noopener">LinkedIn</a>
-      <span><span lang="en">Moscow, Hong Kong, Manila</span><span lang="ru">Москва, Гонконг, Манила</span></span>
+      <span><span lang="en">Moscow, Hong Kong, Manila, Bahrain</span><span lang="ru">Москва, Гонконг, Манила, Бахрейн</span></span>
     </div>
   </div>
 </section>
@@ -330,6 +499,56 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
     document.getElementById('t-hkg').innerHTML=fmt('Asia/Hong_Kong');
   }
   tick(); setInterval(tick,15000);
+
+  /* enquiry form: composes a message and opens the chosen channel */
+  var L={
+    en:{dir:['Russia → Asia','Asia → Russia','Not sure yet'],mkt:['Philippines','Hong Kong','Other Asia','Bahrain / Gulf','Russia'],
+        ph:'Product, partner, stage of the talks, what has stalled',
+        subj:'Enquiry from glushko.works',k:['Direction','Market','Working on','From','Prefers a 15-minute call'],
+        tgok:'Message copied. Paste it into the Telegram chat that just opened.',
+        tgfail:'Telegram opened. Copy your message from the form and paste it there.',
+        empty:'Write a couple of lines about the deal first.'},
+    ru:{dir:['Россия → Азия','Азия → Россия','Пока не знаю'],mkt:['Филиппины','Гонконг','Другие страны Азии','Бахрейн / Залив','Россия'],
+        ph:'Продукт, партнёр, стадия переговоров, что застряло',
+        subj:'Запрос с glushko.works',k:['Направление','Рынок','Задача','От кого','Удобнее 15-минутный звонок'],
+        tgok:'Сообщение скопировано. Вставьте его в открывшийся чат Telegram.',
+        tgfail:'Telegram открыт. Скопируйте текст из формы и вставьте в чат.',
+        empty:'Сначала напишите пару строк о задаче.'}
+  };
+  var dir=document.getElementById('f-dir'),mkt=document.getElementById('f-mkt'),msg=document.getElementById('f-msg'),
+      who=document.getElementById('f-who'),call=document.getElementById('f-call'),st=document.getElementById('f-status');
+  function relabel(){
+    var l=html.getAttribute('data-lang')==='ru'?'ru':'en';
+    L[l].dir.forEach(function(x,i){dir.options[i].text=x;});
+    L[l].mkt.forEach(function(x,i){mkt.options[i].text=x;});
+    msg.placeholder=L[l].ph;
+  }
+  var _set=setLang; setLang=function(l){_set(l);relabel();}; relabel();
+  btns.forEach(function(b){b.addEventListener('click',relabel);});
+  function compose(){
+    var l=html.getAttribute('data-lang')==='ru'?'ru':'en',k=L[l].k;
+    var lines=[k[0]+': '+dir.options[dir.selectedIndex].text, k[1]+': '+mkt.options[mkt.selectedIndex].text];
+    if(msg.value.trim()) lines.push(k[2]+': '+msg.value.trim());
+    if(who.value.trim()) lines.push(k[3]+': '+who.value.trim());
+    if(call.checked) lines.push(k[4]);
+    return {l:l,text:lines.join('\n')};
+  }
+  document.querySelectorAll('.enq .send button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var c=compose(); st.textContent='';
+      if(!msg.value.trim()){st.textContent=L[c.l].empty; msg.focus(); return;}
+      var via=b.dataset.via;
+      if(via==='mail'){
+        location.href='mailto:daniil@glushko.works?subject='+encodeURIComponent(L[c.l].subj)+'&body='+encodeURIComponent(c.text);
+      }else if(via==='wa'){
+        window.open('https://wa.me/79996570608?text='+encodeURIComponent(c.text),'_blank','noopener');
+      }else{
+        var done=function(ok){st.textContent=ok?L[c.l].tgok:L[c.l].tgfail; window.open('https://t.me/finchmadeit','_blank','noopener');};
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(c.text).then(function(){done(true);},function(){done(false);});}
+        else{done(false);}
+      }
+    });
+  });
 })();
 </script>
 </body>
