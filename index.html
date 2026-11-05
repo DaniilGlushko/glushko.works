@@ -29,11 +29,11 @@
       "alternateName": ["Даниил Глушко", "Глушко Даниил", "Glushko Daniil"],
       "givenName": "Daniil",
       "familyName": "Glushko",
-      "url": "https://glushko.works/",
-      "mainEntityOfPage": "https://glushko.works/",
+      "url": "https://glushko.works/about/",
+      "mainEntityOfPage": "https://glushko.works/about/",
       "image": {
         "@type": "ImageObject",
-        "url": "https://glushko.works/images/portrait.jpg",
+        "url": "https://glushko.works/images/daniil-glushko.jpg",
         "width": 800,
         "height": 1000,
         "caption": "Daniil Glushko / Даниил Глушко"
@@ -125,6 +125,7 @@ img{max-width:100%;display:block}
   background:#0E3B4A url("/images/hero.jpg") center/cover no-repeat;padding:120px 0 56px}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,59,74,.55) 0%,rgba(14,40,52,.35) 45%,rgba(10,20,30,.78) 100%)}
 .hero .wrap{position:relative}
+.hero .eyebrow{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:22px}
 .hero h1{font-size:clamp(34px,5.6vw,68px);font-weight:400;max-width:26ch;margin:0 auto;text-shadow:0 2px 6px rgba(0,0,0,.35),0 8px 40px rgba(0,0,0,.45)}
 .hero .lead{font-size:clamp(18px,2.1vw,23px);max-width:64ch;margin:26px auto 0;color:rgba(255,255,255,.92)}
 .hero .cta{display:inline-block;margin-top:40px;background:#fff;color:#15211F;text-decoration:none;font-weight:600;padding:15px 30px;border-radius:999px}
@@ -159,6 +160,7 @@ img{max-width:100%;display:block}
 .formats-note{margin-top:22px;color:var(--ink-2);font-size:15px}
 
 /* markets */
+.about .more{color:var(--sun);text-decoration:none;border-bottom:1px solid rgba(217,164,65,.5)}
 .about .markets{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:repeat(3,1fr);gap:24px 32px;color:rgba(255,255,255,.7);font-size:15px}
 .about .markets b{display:block;color:var(--sun);font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:2px}
 .about .markets em{display:block;font-style:normal;color:#fff;font-size:13px;letter-spacing:.02em;margin-bottom:4px}
@@ -265,7 +267,8 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
     <a class="name" href="#"><span lang="en">Daniil Glushko</span><span lang="ru">Даниил Глушко</span></a>
     <div class="right">
       <nav>
-        <a href="#about"><span lang="en">About</span><span lang="ru">Обо мне</span></a>
+        <a href="/about/"><span lang="en">About</span><span lang="ru">Обо мне</span></a>
+        <a href="/press/"><span lang="en">Press</span><span lang="ru">Публикации</span></a>
         <a href="#services"><span lang="en">Services</span><span lang="ru">Услуги</span></a>
         <a href="#how"><span lang="en">How I work</span><span lang="ru">Подход</span></a>
         <a href="#work"><span lang="en">Work</span><span lang="ru">Опыт</span></a>
@@ -281,6 +284,7 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
 
 <div class="hero">
   <div class="wrap">
+    <p class="eyebrow"><span lang="en">Daniil Glushko · business consultant</span><span lang="ru">Даниил Глушко · бизнес-консультант</span></p>
     <h1><span lang="en">Russian companies in&nbsp;Asia.<br>Asian partners in&nbsp;Russia.</span><span lang="ru">Российские компании в&nbsp;Азии.<br>Азиатские партнёры в&nbsp;России.</span></h1>
     <p class="lead"><span lang="en">Negotiations, partners and government relations where you have no one of&nbsp;your own.<br>Moscow, Hong Kong, Manila, Bahrain.</span><span lang="ru">Переговоры, партнёры и госорганы там, где у&nbsp;вас нет своих людей.<br>Москва, Гонконг, Манила, Бахрейн.</span></p>
     <a class="cta" href="#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
@@ -312,6 +316,7 @@ footer{padding:28px 0;color:var(--ink-2);font-size:14px;text-align:center}
         <p><span lang="en">Every project I've run had two sides that did not speak the same language: a state corporation and a university, an agency and an international federation, a Russian producer and an Asian regulator. My work is to be the one person both sides trust, and to keep the deal moving after the handshake.</span><span lang="ru">В каждом моём проекте были две стороны, которые говорили на разных языках: госкорпорация и университет, агентство и международная федерация, российский производитель и азиатский регулятор. Моя работа — быть человеком, которому доверяют обе стороны, и двигать сделку дальше после рукопожатия.</span></p>
         <p><span lang="en">I prepare the ground before a meeting, sit at the table during it, and take ownership of what was agreed afterwards: documents, approvals, partners, first deliveries. Companies work with me when they need someone on the other side of the border who is accountable for the result, not the process.</span><span lang="ru">Я готовлю почву до встречи, сижу за столом во время неё и отвечаю за договорённости после: документы, согласования, партнёры, первые поставки. Со мной работают, когда по ту сторону границы нужен человек, который отвечает за результат, а не за процесс.</span></p>
         <p><span lang="en">Moscow is home. Hong Kong is where Russian–Asian trade gets structured. Manila is where I've spent the past few years building relationships in business, pharma and government. Bahrain is my door to the Gulf.</span><span lang="ru">Москва — дом. Гонконг — место, где структурируется торговля между Россией и Азией. Манила — город, где последние годы я строю отношения в бизнесе, фармацевтике и государственных структурах. Бахрейн — моя дверь в страны Залива.</span></p>
+        <p><a class="more" href="/about/"><span lang="en">Full biography and career →</span><span lang="ru">Полная биография и карьера →</span></a></p>
         <div class="markets">
           <div><b><span lang="en">Moscow</span><span lang="ru">Москва</span></b><em><span lang="en">Home base</span><span lang="ru">База</span></em><span lang="en">Russian owners, state corporations, universities</span><span lang="ru">Российские собственники, госкорпорации, университеты</span></div>
           <div><b><span lang="en">Hong Kong</span><span lang="ru">Гонконг</span></b><em><span lang="en">Primary market</span><span lang="ru">Основной рынок</span></em><span lang="en">Trading companies, banking and partners for Russia–Asia trade</span><span lang="ru">Торговые компании, банки и партнёры для торговли Россия–Азия</span></div>

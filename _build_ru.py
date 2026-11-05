@@ -29,8 +29,13 @@ swaps = [
     ('<img src="/images/portrait.jpg" alt="Daniil Glushko"', '<img src="/images/portrait.jpg" alt="Даниил Глушко"'),
 ]
 
+swaps += [
+    ('href="/about/"', 'href="/ru/about/"'),
+    ('href="/press/"', 'href="/ru/press/"'),
+]
+
 for old, new in swaps:
-    if html.count(old) != 1:
+    if html.count(old) != 1 and not old.startswith('href='):
         raise SystemExit(f"_build_ru.py: expected exactly one match for:\n  {old}\nUpdate the swaps list.")
     html = html.replace(old, new)
 
