@@ -91,6 +91,7 @@ PERSON = {
         "https://www.linkedin.com/in/ddaniilglushko",
         "https://t.me/finchmadeit",
         "https://roscongress.ru/speakers/glushko-daniil/",
+        "https://tenchat.ru/glushko_daniil",
     ],
 }
 
@@ -150,6 +151,7 @@ ABOUT_BODY = f"""
         <div class="links">
           <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
           <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
+          <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
           <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
           <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
         </div>
