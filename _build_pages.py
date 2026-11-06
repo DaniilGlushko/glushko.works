@@ -78,7 +78,7 @@ PERSON = {
     "@type": "Person",
     "@id": "https://glushko.works/#daniil",
     "name": "Daniil Glushko",
-    "alternateName": ["Даниил Глушко", "Глушко Даниил", "Даниил Дмитриевич Глушко", "Glushko Daniil"],
+    "alternateName": ["Даниил Глушко", "Глушко Даниил", "Глушко Даниил Дмитриевич", "Даниил Дмитриевич Глушко", "Daniil Dmitrievich Glushko", "Glushko Daniil"],
     "givenName": "Daniil",
     "familyName": "Glushko",
     "url": "https://glushko.works/about/",
@@ -141,7 +141,7 @@ ABOUT_BODY = f"""
 <main class="page">
   <div class="wrap">
     <h1><span lang="en">Daniil Glushko</span><span lang="ru">Даниил Глушко</span></h1>
-    <p class="sub"><span lang="en">Business consultant for Russian companies in Asia and Asian partners in Russia. Negotiations, partners, government relations. Moscow, Hong Kong, Manila, Bahrain.</span><span lang="ru">Бизнес-консультант: российские компании в Азии и азиатские партнёры в России. Переговоры, партнёры, работа с госорганами. Москва, Гонконг, Манила, Бахрейн.</span></p>
+    <p class="sub"><span lang="en">Daniil Dmitrievich Glushko. Business consultant for Russian companies in Asia and Asian partners in Russia. Negotiations, partners, government relations. Moscow, Hong Kong, Manila, Bahrain.</span><span lang="ru">Глушко Даниил Дмитриевич. Бизнес-консультант: российские компании в Азии и азиатские партнёры в России. Переговоры, партнёры, работа с госорганами. Москва, Гонконг, Манила, Бахрейн.</span></p>
     <div class="grid">
       <img src="/images/daniil-glushko.jpg" alt="Daniil Glushko (Даниил Глушко), business consultant" width="800" height="1000" decoding="async">
       <div class="bio">
@@ -212,9 +212,9 @@ def press_body():
 PAGES = {
     "about": {
         "en": ("Daniil Glushko — business consultant, Russia and Asia",
-               "Daniil Glushko: cross-border business consultant. Russian companies in Hong Kong, the Philippines and the Gulf; Asian partners in Russia. Biography, career, contacts."),
-        "ru": ("Даниил Глушко — бизнес-консультант, Россия и Азия",
-               "Даниил Глушко: консультант по выходу российских компаний в Гонконг, на Филиппины и в страны Залива и по работе азиатских партнёров в России. Биография, карьера, контакты."),
+               "Daniil Dmitrievich Glushko: cross-border business consultant. Russian companies in Hong Kong, the Philippines and the Gulf; Asian partners in Russia. Biography, career, contacts."),
+        "ru": ("Даниил Дмитриевич Глушко — бизнес-консультант, Россия и Азия",
+               "Глушко Даниил Дмитриевич: консультант по выходу российских компаний в Гонконг, на Филиппины и в страны Залива и по работе азиатских партнёров в России. Биография, карьера, контакты."),
         "body": ABOUT_BODY,
     },
     "press": {
