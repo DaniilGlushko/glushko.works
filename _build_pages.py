@@ -205,6 +205,13 @@ def press_body():
     <div class="cases" style="margin-top:48px">
 {chr(10).join(items)}
     </div>
+    <h2 class="title"><span lang="en">Daniil Glushko online</span><span lang="ru">Даниил Глушко в сети</span></h2>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
+      <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
+      <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
+      <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
+    </div>
     <a class="cta" href="/about/" data-ru="/ru/about/"><span lang="en">About Daniil Glushko</span><span lang="ru">О Данииле Глушко</span></a>
   </div>
 </main>
