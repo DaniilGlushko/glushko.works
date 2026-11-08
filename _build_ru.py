@@ -27,6 +27,11 @@ swaps = [
     ('<link rel="canonical" href="https://glushko.works/">',
      '<link rel="canonical" href="https://glushko.works/ru/">'),
     ('<img src="/images/portrait.jpg" alt="Daniil Glushko"', '<img src="/images/portrait.jpg" alt="Даниил Глушко"'),
+    # the Russian page needs the Cyrillic font files first
+    ('<link rel="preload" href="/fonts/cormorant-garamond-normal-latin-7.woff2"',
+     '<link rel="preload" href="/fonts/cormorant-garamond-normal-cyrillic-5.woff2"'),
+    ('<link rel="preload" href="/fonts/golos-text-normal-latin-11.woff2"',
+     '<link rel="preload" href="/fonts/golos-text-normal-cyrillic-9.woff2"'),
 ]
 
 swaps += [

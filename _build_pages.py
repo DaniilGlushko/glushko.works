@@ -21,42 +21,70 @@ def between(text, start, end, start_from=0):
 
 
 style, _ = between(src, "<style>", "</style>")
-header, _ = between(src, '<header class="bar">', "</header>")
-footer, _ = between(src, '<footer class="wrap">', "</footer>")
+header, _ = between(src, '<header class="hdr" id="hdr">', "</header>")
+footer, _ = between(src, "<footer>", "</footer>")
 
 # nav links on sub-pages point back to the home page sections
-header = (header.replace('href="#"', 'href="/"')
-          .replace('href="#about"', 'href="/#about"').replace('href="#services"', 'href="/#services"')
-          .replace('href="#how"', 'href="/#how"').replace('href="#work"', 'href="/#work"')
-          .replace('href="#contact"', 'href="/#contact"')
-          .replace('<header class="bar">', '<header class="bar solid">'))
+header = (header.replace('href="#top"', 'href="/"')
+          .replace('href="#', 'href="/#'))
 
-about_sec, _ = between(src, '<section id="about"', "</section>")
-bio = "\n".join(re.findall(r"<p><span lang=\"en\">.*?</p>", about_sec, re.S)[:3])
+# Russian sub-pages link to the Russian home page and sub-pages
+def to_ru(fragment):
+    return (fragment.replace('href="/#', 'href="/ru/#').replace('href="/"', 'href="/ru/"')
+            .replace('href="/press/"', 'href="/ru/press/"').replace('href="/about/"', 'href="/ru/about/"'))
 
-work_sec, _ = between(src, '<section id="work"', "</section>")
-cases = work_sec[work_sec.index('<div class="cases">'):work_sec.rindex("</div>")]
-cases = cases[:cases.rindex("</div>") + len("</div>")]  # keep .cases closed, drop .wrap closing
+
+# Bio and career for /about/. Kept here (not on the home page) so the about page
+# carries the full text for name searches.
+BIO = [
+    '<span lang="en">Every project I\'ve run had two sides that did not speak the same language: a state corporation and a university, an agency and an international federation, a Russian producer and an Asian regulator. My work is to be the one person both sides trust, and to keep the deal moving after the handshake.</span><span lang="ru">В каждом моём проекте были две стороны, которые говорили на разных языках: госкорпорация и университет, агентство и международная федерация, российский производитель и азиатский регулятор. Моя работа — быть человеком, которому доверяют обе стороны, и двигать сделку дальше после рукопожатия.</span>',
+    '<span lang="en">I prepare the ground before a meeting, sit at the table during it, and take ownership of what was agreed afterwards: documents, approvals, partners, first deliveries. Companies work with me when they need someone on the other side of the border who is accountable for the result, not the process.</span><span lang="ru">Я готовлю почву до встречи, сижу за столом во время неё и отвечаю за договорённости после: документы, согласования, партнёры, первые поставки. Со мной работают, когда по ту сторону границы нужен человек, который отвечает за результат, а не за процесс.</span>',
+    '<span lang="en">Moscow is home. Hong Kong is where Russian–Asian trade gets structured. Manila is where I\'ve spent the past few years building relationships in business, pharma and government. Bahrain is my door to the Gulf.</span><span lang="ru">Москва — дом. Гонконг — место, где структурируется торговля между Россией и Азией. Манила — город, где последние годы я строю отношения в бизнесе, фармацевтике и государственных структурах. Бахрейн — моя дверь в страны Залива.</span>',
+]
+CAREER = [
+    ('2026 —', '<span lang="en">Pork and pet-food exports to the Philippines, Talina Group</span><span lang="ru">Экспорт свинины и кормов на Филиппины, ГК «Талина»</span>',
+     '<span lang="en">Representing a vertically integrated Russian agro-holding in the Philippines: JV partner search for local processing and distribution; engagement with the Department of Agriculture, the Board of Investments and PEZA; deal structuring around MAV quotas and a Hong Kong trading company.</span><span lang="ru">Доверенное лицо вертикально интегрированного агрохолдинга в переговорах с филиппинскими партнёрами: поиск партнёра для СП по локальной переработке и дистрибуции, работа с Министерством сельского хозяйства, Board of Investments и PEZA, структурирование сделки с учётом квот MAV и торговой компании в Гонконге.</span>'),
+    ('2026 —', '<span lang="en">Pharma track and trace, Medical Value Chain</span><span lang="ru">Прослеживаемость лекарств, Medical Value Chain</span>',
+     '<span lang="en">Introducing a blockchain track-and-trace platform to the Philippine pharmaceutical sector and extending it to halal supply chains with local partners.</span><span lang="ru">Вывод блокчейн-платформы track &amp; trace на фармацевтический рынок Филиппин и расширение её на халяльные цепочки поставок с местными партнёрами.</span>'),
+    ('2022 — 2026', '<span lang="en">Head of Department, Rosatom Corporate Academy</span><span lang="ru">Руководитель отдела, Корпоративная Академия Росатома</span>',
+     '<span lang="en">Ran the Academy\'s talent and partnership portfolio: a network of 10+ universities and research centers (MIPT, MEPhI, Sirius), a Master\'s program in applied robotics built from scratch, the annual School of Fundamental Physics and Mathematics, the national AtomSkills championship and industry conferences with 8,000+ participants. Secured approval for USD 3.6M+ in investment projects.</span><span lang="ru">Руководил портфелем программ Академии по талантам и партнёрствам: сеть из 10+ университетов и научных центров (МФТИ, НИЯУ МИФИ, «Сириус»), магистратура по прикладной робототехнике с нуля, ежегодная Школа по фундаментальной физике и математике, чемпионат AtomSkills и отраслевые конференции на 8 000+ участников. Защитил инвестиционные проекты на 300+ млн ₽.</span>'),
+    ('2021 — 2022', '<span lang="en">Head of Projects, HSE University</span><span lang="ru">Руководитель проектов, НИУ ВШЭ</span>',
+     '<span lang="en">Led a 15-person project team; introduced Agile and OKRs, cutting time-to-market by 30%. Relaunched the university brand, which placed in the national RAEX ranking.</span><span lang="ru">Руководил проектной командой из 15 человек; внедрил Agile и OKR, сократив срок вывода проектов на 30%. Перезапустил бренд университета, призовое место в рейтинге RAEX.</span>'),
+    ('2019 — 2021', '<span lang="en">Independent strategy consultant</span><span lang="ru">Независимый консультант по стратегии</span>',
+     '<span lang="en">Advised business owners on strategy and saw it through: a social media strategy that grew a national sports brand\'s reach 3.5x; a TV commercial for Channel One, from concept to air.</span><span lang="ru">Консультировал собственников бизнеса по стратегии и доводил её до результата: SMM-стратегия, увеличившая охват национального спортивного бренда в 3,5 раза; рекламный ролик для Первого канала от идеи до эфира.</span>'),
+    ('2016 — 2019', '<span lang="en">FIFA World Cup 2018 and the Children of Asia Games</span><span lang="ru">ЧМ-2018 и Игры «Дети Азии»</span>',
+     '<span lang="en">International campaigns for the FIFA World Cup 2018 and Football for Friendship across 12 countries (5M+ reach) at AGT Communications; coordinated 15 Asian National Olympic Committees for the first Winter Children of Asia Games.</span><span lang="ru">Международные кампании FIFA World Cup 2018 и «Футбол для дружбы» в 12 странах (охват 5+ млн) в агентстве АГТ; координировал 15 национальных олимпийских комитетов Азии для первых зимних Игр «Дети Азии».</span>'),
+]
+bio = "\n".join(f"<p>{p}</p>" for p in BIO)
+cases = '<div class="tl">\n' + "\n".join(
+    f'  <div class="tl-item"><span class="when">{w}</span><h3>{h}</h3><p>{p}</p></div>' for w, h, p in CAREER) + "\n</div>"
 
 EXTRA_CSS = """
 <style>
-.bar.solid{position:static;background:#0E3B4A}
-.page{padding:72px 0 96px}
-.page h1{font-size:clamp(38px,5vw,62px);font-weight:400;max-width:20ch}
-.page .sub{font-size:clamp(18px,2vw,22px);color:var(--ink-2);max-width:60ch;margin-top:14px}
-.page .grid{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start;margin-top:48px}
-.page .grid img{width:100%;height:auto;border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
-.page .bio p{margin-top:18px;max-width:64ch}
-.page .bio p:first-child{margin-top:0}
-.page h2.title{margin-top:72px}
-.page .links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:24px}
-.page .links a{text-decoration:none;border-bottom:1px solid var(--sun)}
-.page .cta{display:inline-block;margin-top:40px;background:#0E3B4A;color:#fff;text-decoration:none;font-weight:600;padding:15px 30px;border-radius:999px}
-.page .cta:hover{background:var(--sun);color:#15211F}
-.press .case h3 a{text-decoration:none;border-bottom:1px solid var(--line)}
-.press .case h3 a:hover{border-color:var(--sun)}
-.press .case .src{display:block;color:var(--ink-2);font-size:14px;margin-top:4px}
-@media (max-width:720px){.page .grid{grid-template-columns:1fr;gap:32px}.page .grid img{max-width:320px}}
+.page{padding:clamp(48px,6vw,88px) 0 clamp(72px,8vw,120px)}
+.page h1{font-size:clamp(44px,6vw,88px);letter-spacing:-.025em;max-width:18ch}
+.page .sub{font-size:clamp(18px,1.45vw,21px);line-height:1.5;color:var(--ink-2);max-width:60ch;margin-top:22px}
+.page .grid{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start;margin-top:56px}
+.page .grid img{width:200px;height:auto;aspect-ratio:4/5;object-fit:cover;filter:saturate(.72) contrast(1.03)}
+.page .bio p{font-size:clamp(17px,1.2vw,19px);color:var(--ink-2);max-width:62ch}
+.page .bio p+p{margin-top:16px}
+.page h2.title{margin:clamp(64px,7vw,104px) 0 28px;font-size:clamp(34px,3.6vw,56px)}
+.page .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.page .links a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;transition:border-color .2s,color .2s}
+.page .links a:hover{border-color:var(--gold-ink);color:var(--gold-ink)}
+.page .btn{margin-top:48px}
+.tl{border-top:1px solid var(--ink)}
+.tl-item{display:grid;grid-template-columns:repeat(12,1fr);gap:8px 24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.tl-item .when{grid-column:1/3;font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.tl-item h3{grid-column:3/13;font-size:clamp(22px,1.8vw,28px)}
+.tl-item p,.tl-item .src{grid-column:3/11;font-size:15px;color:var(--ink-2)}
+.tl-item h3 a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+.tl-item h3 a:hover{border-color:var(--gold-ink);color:var(--gold-ink)}
+@media (max-width:820px){
+  .page .grid{grid-template-columns:1fr;gap:28px}
+  .page .grid img{width:140px}
+  .tl-item .when,.tl-item h3,.tl-item p,.tl-item .src{grid-column:1/13}
+}
 </style>
 """
 
@@ -127,14 +155,11 @@ def head(lang, page, title, desc):
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=2)}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 {style}
 {EXTRA_CSS}
 </head>
 <body>
-{header}
+{header if lang == "en" else to_ru(header)}
 """
 
 
@@ -159,7 +184,7 @@ ABOUT_BODY = f"""
     </div>
     <h2 class="title"><span lang="en">Career</span><span lang="ru">Карьера</span></h2>
     {cases}
-    <a class="cta" href="/#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
+    <a class="btn" href="/#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
   </div>
 </main>
 """
@@ -190,19 +215,17 @@ PRESS_ITEMS = [
 def press_body():
     items = []
     for when, url, en, ru, src_en, src_ru in PRESS_ITEMS:
-        items.append(f"""      <div class="case">
-        <div class="when">{when}</div>
-        <div>
-          <h3><a href="{url}" rel="noopener"><span lang="en">{en}</span><span lang="ru">{ru}</span></a></h3>
-          <span class="src"><span lang="en">{src_en}</span><span lang="ru">{src_ru}</span></span>
-        </div>
+        items.append(f"""      <div class="tl-item">
+        <span class="when">{when}</span>
+        <h3><a href="{url}" rel="noopener"><span lang="en">{en}</span><span lang="ru">{ru}</span></a></h3>
+        <span class="src"><span lang="en">{src_en}</span><span lang="ru">{src_ru}</span></span>
       </div>""")
     return f"""
 <main class="page press">
   <div class="wrap">
     <h1><span lang="en">Daniil Glushko: publications and talks</span><span lang="ru">Даниил Глушко: публикации и выступления</span></h1>
     <p class="sub"><span lang="en">Where I have spoken or been quoted: forums, industry media, educational programmes.</span><span lang="ru">Где я выступал или давал комментарии: форумы, отраслевые медиа, образовательные программы.</span></p>
-    <div class="cases" style="margin-top:48px">
+    <div class="tl" style="margin-top:48px">
 {chr(10).join(items)}
     </div>
     <h2 class="title"><span lang="en">Daniil Glushko online</span><span lang="ru">Даниил Глушко в сети</span></h2>
@@ -212,7 +235,7 @@ def press_body():
       <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
       <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
     </div>
-    <a class="cta" href="/about/" data-ru="/ru/about/"><span lang="en">About Daniil Glushko</span><span lang="ru">О Данииле Глушко</span></a>
+    <a class="btn" href="/about/" data-ru="/ru/about/"><span lang="en">About Daniil Glushko</span><span lang="ru">О Данииле Глушко</span></a>
   </div>
 </main>
 """
@@ -246,7 +269,7 @@ for page, cfg in PAGES.items():
                              'alt="Даниил Глушко (Daniil Glushko), бизнес-консультант"'))
         else:
             body = body.replace(' data-ru="/ru/press/"', '').replace(' data-ru="/ru/about/"', '')
-        doc = (head(lang, page, title, desc) + body + "\n" + footer + "\n"
+        doc = (head(lang, page, title, desc) + body + "\n" + (footer if lang == "en" else to_ru(footer)) + "\n"
                + SCRIPT.replace("PAGE", repr(page)) + "</body>\n</html>\n")
         out = root / (page if lang == "en" else f"ru/{page}") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
