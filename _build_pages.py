@@ -75,10 +75,10 @@ EXTRA_CSS = """
 .page .btn{margin-top:48px}
 .photos{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
 .photos figure{margin:0;grid-column:span 3}
-.photos figure:first-child{grid-column:span 6}
+.photos figure:nth-child(-n+2){grid-column:span 6}
 .photos img{width:100%;height:auto;display:block;filter:saturate(.85)}
 .photos figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);line-height:1.4}
-@media (max-width:820px){.photos figure,.photos figure:first-child{grid-column:span 6}}
+@media (max-width:820px){.photos figure,.photos figure:nth-child(-n+2){grid-column:span 6}}
 .tl{border-top:1px solid var(--ink)}
 .tl-item{display:grid;grid-template-columns:repeat(12,1fr);gap:8px 24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .tl-item .when{grid-column:1/3;font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
@@ -177,6 +177,9 @@ PHOTOS = [
     ("daniil-glushko-rosatom.jpg", 1600, 900,
      "Daniil Glushko at a Rosatom Corporate Academy round table, Moscow",
      "Даниил Глушко на круглом столе Корпоративной академии Росатома, Москва"),
+    ("daniil-glushko-ekaterinburg-expo.jpg", 1182, 665,
+     "Daniil Glushko at a Rosatom round table, Ekaterinburg-Expo",
+     "Даниил Глушко на круглом столе Росатома, Екатеринбург-Экспо"),
     ("daniil-glushko-shanghai.jpg", 1200, 1600,
      "Daniil Glushko in Shanghai, Pudong",
      "Даниил Глушко в Шанхае, Пудун"),
@@ -186,6 +189,9 @@ PHOTOS = [
     ("daniil-glushko-trail-run.jpg", 1066, 1600,
      "Daniil Glushko at a 100 km trail race",
      "Даниил Глушко на трейловом забеге на 100 км"),
+    ("daniil-glushko-business-portrait.jpg", 724, 1086,
+     "Daniil Glushko, business portrait",
+     "Даниил Глушко, деловой портрет"),
 ]
 
 def photos_html():
