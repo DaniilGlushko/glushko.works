@@ -19,17 +19,25 @@
   </url>
   <url>
     <loc>https://glushko.works/about/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/about/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/about/"/>
     <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Glushko</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Daniil Glushko at a Rosatom Corporate Academy round table, Moscow</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Daniil Glushko in Shanghai</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Daniil Glushko, studio portrait</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Daniil Glushko at a trail race</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/ru/about/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/about/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/about/"/>
     <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Даниил Глушко</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Даниил Глушко на круглом столе Корпоративной академии Росатома</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Даниил Глушко в Шанхае</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Даниил Глушко, студийный портрет</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Даниил Глушко на трейловом забеге</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/press/</loc>

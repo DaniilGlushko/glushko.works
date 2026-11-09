@@ -73,6 +73,12 @@ EXTRA_CSS = """
 .page .links a{font-size:14px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;transition:border-color .2s,color .2s}
 .page .links a:hover{border-color:var(--gold-ink);color:var(--gold-ink)}
 .page .btn{margin-top:48px}
+.photos{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:start}
+.photos figure{margin:0;grid-column:span 3}
+.photos figure:first-child{grid-column:span 6}
+.photos img{width:100%;height:auto;display:block;filter:saturate(.85)}
+.photos figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);line-height:1.4}
+@media (max-width:820px){.photos figure,.photos figure:first-child{grid-column:span 6}}
 .tl{border-top:1px solid var(--ink)}
 .tl-item{display:grid;grid-template-columns:repeat(12,1fr);gap:8px 24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .tl-item .when{grid-column:1/3;font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
@@ -129,7 +135,11 @@ def head(lang, page, title, desc):
     ru_url = f"https://glushko.works/ru/{page}/"
     canon = en_url if lang == "en" else ru_url
     if page == "about":
-        ld = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": PERSON, "url": canon}
+        person = dict(PERSON)
+        person["image"] = [PERSON["image"]] + PHOTO_URLS
+        ld = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": person, "url": canon,
+              "image": [{"@type": "ImageObject", "contentUrl": u, "name": (en if lang == "en" else ru)}
+                        for (f, w, h, en, ru), u in zip(PHOTOS, PHOTO_URLS)]}
     else:
         ld = {"@context": "https://schema.org", "@type": "CollectionPage",
               "about": {"@id": "https://glushko.works/#daniil"}, "name": title, "url": canon}
@@ -163,6 +173,32 @@ def head(lang, page, title, desc):
 """
 
 
+PHOTOS = [
+    ("daniil-glushko-rosatom.jpg", 1600, 900,
+     "Daniil Glushko at a Rosatom Corporate Academy round table, Moscow",
+     "Даниил Глушко на круглом столе Корпоративной академии Росатома, Москва"),
+    ("daniil-glushko-shanghai.jpg", 1200, 1600,
+     "Daniil Glushko in Shanghai, Pudong",
+     "Даниил Глушко в Шанхае, Пудун"),
+    ("daniil-glushko-portrait-studio.jpg", 724, 1086,
+     "Daniil Glushko, studio portrait",
+     "Даниил Глушко, студийный портрет"),
+    ("daniil-glushko-trail-run.jpg", 1066, 1600,
+     "Daniil Glushko at a 100 km trail race",
+     "Даниил Глушко на трейловом забеге на 100 км"),
+]
+
+def photos_html():
+    figs = []
+    for f, w, h, en, ru in PHOTOS:
+        figs.append(f"""      <figure>
+        <img src="/images/{f}" alt="{en} / {ru}" width="{w}" height="{h}" loading="lazy" decoding="async">
+        <figcaption><span lang="en">{en}</span><span lang="ru">{ru}</span></figcaption>
+      </figure>""")
+    return "\n".join(figs)
+
+PHOTO_URLS = [f"https://glushko.works/images/{f}" for f, *_ in PHOTOS]
+
 ABOUT_BODY = f"""
 <main class="page">
   <div class="wrap">
@@ -181,6 +217,10 @@ ABOUT_BODY = f"""
           <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
         </div>
       </div>
+    </div>
+    <h2 class="title"><span lang="en">In the field</span><span lang="ru">В работе и в дороге</span></h2>
+    <div class="photos">
+{photos_html()}
     </div>
     <h2 class="title"><span lang="en">Career</span><span lang="ru">Карьера</span></h2>
     {cases}
