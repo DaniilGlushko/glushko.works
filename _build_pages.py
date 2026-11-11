@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-"""Build /about/ and /press/ (EN) and /ru/about/, /ru/press/ (RU) from index.html.
+"""Build /about/ and /press/ (EN) and /ru/about/, /ru/press/ (RU) from _index.html.
 
-The sub-pages reuse the <style> block, header and footer of index.html, so the
+The sub-pages reuse the <style> block, header and footer of _index.html, so the
 look stays in sync.  Bio paragraphs and the career list are taken from the
-"about" and "work" sections of index.html, so edit them there.
-Run after every edit of index.html:  python3 _build_ru.py && python3 _build_pages.py
+"about" and "work" sections of _index.html, so edit them there.
+Each published page gets its own language only (see _strip_lang.py).
+Run after every edit of _index.html:  python3 _build_ru.py && python3 _build_pages.py
 """
 import json
 import re
 from pathlib import Path
 
+from _strip_lang import strip_lang
+
 root = Path(__file__).parent
-src = (root / "index.html").read_text(encoding="utf-8")
+src = (root / "_index.html").read_text(encoding="utf-8")
 
 
 def between(text, start, end, start_from=0):
@@ -319,5 +322,5 @@ for page, cfg in PAGES.items():
                + SCRIPT.replace("PAGE", repr(page)) + "</body>\n</html>\n")
         out = root / (page if lang == "en" else f"ru/{page}") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(doc, encoding="utf-8")
+        out.write_text(strip_lang(doc, drop="ru" if lang == "en" else "en"), encoding="utf-8")
         print("wrote", out.relative_to(root))

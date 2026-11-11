@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-"""Build ru/index.html from index.html.
+"""Build index.html (English) and ru/index.html (Russian) from _index.html.
 
-index.html holds both languages; the Russian page is the same file with
-Russian shown by default and its own title, description and canonical URL.
-Run after every edit of index.html:  python3 _build_ru.py
-(The leading underscore keeps GitHub Pages from publishing this script.)
+_index.html is the source and holds both languages.  Each published page gets
+its own language only (see _strip_lang.py); the Russian page also gets its own
+title, description and canonical URL.  Never edit index.html or ru/index.html
+by hand.  Run after every edit of _index.html:  python3 _build_ru.py
+(The leading underscore keeps GitHub Pages from publishing the source and this script.)
 """
 from pathlib import Path
 
+from _strip_lang import strip_lang
+
 root = Path(__file__).parent
-html = (root / "index.html").read_text(encoding="utf-8")
+html = (root / "_index.html").read_text(encoding="utf-8")
+
+(root / "index.html").write_text(strip_lang(html, drop="ru"), encoding="utf-8")
+print("index.html updated")
 
 swaps = [
     ('<html lang="en" data-lang="en">', '<html lang="ru" data-lang="ru">'),
@@ -45,5 +51,5 @@ for old, new in swaps:
     html = html.replace(old, new)
 
 (root / "ru").mkdir(exist_ok=True)
-(root / "ru" / "index.html").write_text(html, encoding="utf-8")
+(root / "ru" / "index.html").write_text(strip_lang(html, drop="en"), encoding="utf-8")
 print("ru/index.html updated")
