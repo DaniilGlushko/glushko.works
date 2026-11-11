@@ -143,6 +143,17 @@ def head(lang, page, title, desc):
         ld = {"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": person, "url": canon,
               "image": [{"@type": "ImageObject", "contentUrl": u, "name": (en if lang == "en" else ru)}
                         for (f, w, h, en, ru), u in zip(PHOTOS, PHOTO_URLS)]}
+    elif page == "photos":
+        person = dict(PERSON)
+        person["image"] = [f"https://glushko.works/images/{f}" for f, *_ in GALLERY]
+        ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": title, "url": canon,
+              "about": person, "description": desc,
+              "image": [{"@type": "ImageObject", "contentUrl": f"https://glushko.works/images/{f}",
+                         "width": w, "height": h,
+                         "name": (en_alt(en) if lang == "en" else ru_alt(ru)),
+                         "caption": (en if lang == "en" else ru),
+                         "about": {"@id": "https://glushko.works/#daniil"}}
+                        for f, w, h, en, ru in GALLERY]}
     else:
         ld = {"@context": "https://schema.org", "@type": "CollectionPage",
               "about": {"@id": "https://glushko.works/#daniil"}, "name": title, "url": canon}
@@ -197,16 +208,38 @@ PHOTOS = [
      "Даниил Глушко, деловой портрет"),
 ]
 
+MAIN_PHOTO = ("daniil-glushko.jpg", 800, 1000,
+              "Daniil Glushko, business consultant",
+              "Даниил Глушко, бизнес-консультант")
+
+
+def ru_alt(ru):
+    """Russian alt text with the surname first, the way people search for it."""
+    return ru.replace("Даниил Глушко", "Глушко Даниил Дмитриевич", 1)
+
+
+def en_alt(en):
+    return en.replace("Daniil Glushko", "Daniil Dmitrievich Glushko", 1)
+
+
+def figure(f, w, h, en, ru, lazy=True):
+    """One figure per language, so each page gets an alt text in its own language."""
+    load = ' loading="lazy"' if lazy else ""
+    return (f'      <figure lang="en">\n'
+            f'        <img src="/images/{f}" alt="{en_alt(en)}" width="{w}" height="{h}"{load} decoding="async">\n'
+            f'        <figcaption>{en}</figcaption>\n'
+            f'      </figure>\n'
+            f'      <figure lang="ru">\n'
+            f'        <img src="/images/{f}" alt="{ru_alt(ru)}" width="{w}" height="{h}"{load} decoding="async">\n'
+            f'        <figcaption>{ru}</figcaption>\n'
+            f'      </figure>')
+
+
 def photos_html():
-    figs = []
-    for f, w, h, en, ru in PHOTOS:
-        figs.append(f"""      <figure>
-        <img src="/images/{f}" alt="{en} / {ru}" width="{w}" height="{h}" loading="lazy" decoding="async">
-        <figcaption><span lang="en">{en}</span><span lang="ru">{ru}</span></figcaption>
-      </figure>""")
-    return "\n".join(figs)
+    return "\n".join(figure(*p) for p in PHOTOS)
 
 PHOTO_URLS = [f"https://glushko.works/images/{f}" for f, *_ in PHOTOS]
+GALLERY = [MAIN_PHOTO] + PHOTOS
 
 ABOUT_BODY = f"""
 <main class="page">
@@ -224,6 +257,7 @@ ABOUT_BODY = f"""
           <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
           <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
           <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
+          <a href="/photos/" data-ru="/ru/photos/"><span lang="en">Photos</span><span lang="ru">Фото</span></a>
         </div>
       </div>
     </div>
@@ -274,6 +308,10 @@ def press_body():
   <div class="wrap">
     <h1><span lang="en">Daniil Glushko: publications and talks</span><span lang="ru">Даниил Глушко: публикации и выступления</span></h1>
     <p class="sub"><span lang="en">Where I have spoken or been quoted: forums, industry media, educational programmes.</span><span lang="ru">Где я выступал или давал комментарии: форумы, отраслевые медиа, образовательные программы.</span></p>
+    <div class="photos" style="margin-top:48px">
+{figure(*PHOTOS[0], lazy=False)}
+{figure(*PHOTOS[1], lazy=False)}
+    </div>
     <div class="tl" style="margin-top:48px">
 {chr(10).join(items)}
     </div>
@@ -283,8 +321,29 @@ def press_body():
       <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
       <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
       <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
+      <a href="/photos/" data-ru="/ru/photos/"><span lang="en">Photos of Daniil Glushko</span><span lang="ru">Фото Даниила Глушко</span></a>
     </div>
     <a class="btn" href="/about/" data-ru="/ru/about/"><span lang="en">About Daniil Glushko</span><span lang="ru">О Данииле Глушко</span></a>
+  </div>
+</main>
+"""
+
+
+PHOTOS_BODY = f"""
+<main class="page">
+  <div class="wrap">
+    <h1><span lang="en">Daniil Glushko: photos</span><span lang="ru">Глушко Даниил: фото</span></h1>
+    <p class="sub"><span lang="en">Daniil Dmitrievich Glushko, business consultant for Russian companies in Asia and Asian partners in Russia: round tables, forums, trips and portraits. The photos may be used in publications with the name credited.</span><span lang="ru">Глушко Даниил Дмитриевич, бизнес-консультант по работе российских компаний в Азии и азиатских партнёров в России: круглые столы, форумы, поездки и портреты. Фото можно использовать в публикациях с указанием имени.</span></p>
+    <div class="photos" style="margin-top:48px">
+{chr(10).join(figure(*p, lazy=i > 2) for i, p in enumerate(PHOTOS[:2] + [MAIN_PHOTO] + PHOTOS[2:]))}
+    </div>
+    <div class="links" style="margin-top:48px">
+      <a href="/about/" data-ru="/ru/about/"><span lang="en">About Daniil Glushko</span><span lang="ru">О Данииле Глушко</span></a>
+      <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
+      <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
+      <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
+    </div>
+    <a class="btn" href="/#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
   </div>
 </main>
 """
@@ -305,6 +364,13 @@ PAGES = {
                "Публикации, интервью и выступления Даниила Глушко: Росконгресс, AtomSkills, Университет «Сириус», Корпоративная академия Росатома."),
         "body": press_body(),
     },
+    "photos": {
+        "en": ("Daniil Glushko — photos",
+               "Photos of Daniil Dmitrievich Glushko, business consultant: Rosatom round tables, forums, Shanghai, portraits."),
+        "ru": ("Глушко Даниил Дмитриевич — фото",
+               "Фотографии Даниила Глушко, бизнес-консультанта: круглые столы Росатома, форумы, Шанхай, портреты."),
+        "body": PHOTOS_BODY,
+    },
 }
 
 for page, cfg in PAGES.items():
@@ -314,13 +380,45 @@ for page, cfg in PAGES.items():
         if lang == "ru":
             body = (body.replace('href="/press/" data-ru="/ru/press/"', 'href="/ru/press/"')
                     .replace('href="/about/" data-ru="/ru/about/"', 'href="/ru/about/"')
+                    .replace('href="/photos/" data-ru="/ru/photos/"', 'href="/ru/photos/"')
                     .replace('alt="Daniil Glushko (Даниил Глушко), business consultant"',
                              'alt="Даниил Глушко (Daniil Glushko), бизнес-консультант"'))
         else:
-            body = body.replace(' data-ru="/ru/press/"', '').replace(' data-ru="/ru/about/"', '')
+            body = (body.replace(' data-ru="/ru/press/"', '').replace(' data-ru="/ru/about/"', '')
+                    .replace(' data-ru="/ru/photos/"', ''))
         doc = (head(lang, page, title, desc) + body + "\n" + (footer if lang == "en" else to_ru(footer)) + "\n"
                + SCRIPT.replace("PAGE", repr(page)) + "</body>\n</html>\n")
         out = root / (page if lang == "en" else f"ru/{page}") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(strip_lang(doc, drop="ru" if lang == "en" else "en"), encoding="utf-8")
         print("wrote", out.relative_to(root))
+
+
+# sitemap.xml: every page in both languages, with the photos it shows
+SITE = "https://glushko.works"
+TODAY = "2026-11-12"
+PAGE_PHOTOS = {"": [MAIN_PHOTO], "about": [MAIN_PHOTO] + PHOTOS, "press": PHOTOS[:2], "photos": GALLERY}
+
+
+def sitemap_url(path, lang, photos):
+    loc = f"{SITE}/{'ru/' if lang == 'ru' else ''}{path + '/' if path else ''}"
+    en = f"{SITE}/{path + '/' if path else ''}"
+    ru = f"{SITE}/ru/{path + '/' if path else ''}"
+    imgs = "".join(
+        f"\n    <image:image><image:loc>{SITE}/images/{f}</image:loc>"
+        f"<image:title>{(en_alt(e) if lang == 'en' else ru_alt(r))}</image:title></image:image>"
+        for f, w, h, e, r in photos)
+    og = f"\n    <image:image><image:loc>{SITE}/og.jpg</image:loc></image:image>" if (path == "" and lang == "en") else ""
+    return (f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{TODAY}</lastmod>\n"
+            f'    <xhtml:link rel="alternate" hreflang="en" href="{en}"/>\n'
+            f'    <xhtml:link rel="alternate" hreflang="ru" href="{ru}"/>{imgs}{og}\n  </url>')
+
+
+urls = [sitemap_url(p, lang, ph) for p, ph in PAGE_PHOTOS.items() for lang in ("en", "ru")]
+(root / "sitemap.xml").write_text(
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+    '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+    + "\n".join(urls) + "\n</urlset>\n", encoding="utf-8")
+print("wrote sitemap.xml")

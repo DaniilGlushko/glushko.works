@@ -4,55 +4,85 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://glushko.works/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/"/>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Glushko</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, business consultant</image:title></image:image>
     <image:image><image:loc>https://glushko.works/og.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://glushko.works/ru/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/"/>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Даниил Глушко</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, бизнес-консультант</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/about/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/about/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/about/"/>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Glushko</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Daniil Glushko at a Rosatom Corporate Academy round table, Moscow</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Daniil Glushko in Shanghai</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Daniil Glushko, studio portrait</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Daniil Glushko at a trail race</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Daniil Glushko at a Rosatom round table, Ekaterinburg-Expo</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Daniil Glushko, business portrait</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, business consultant</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom Corporate Academy round table, Moscow</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom round table, Ekaterinburg-Expo</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Daniil Dmitrievich Glushko in Shanghai, Pudong</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, studio portrait</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a 100 km trail race</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, business portrait</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/ru/about/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/about/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/about/"/>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Даниил Глушко</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Даниил Глушко на круглом столе Корпоративной академии Росатома</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Даниил Глушко в Шанхае</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Даниил Глушко, студийный портрет</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Даниил Глушко на трейловом забеге</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Даниил Глушко на круглом столе Росатома, Екатеринбург-Экспо</image:title></image:image>
-    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Даниил Глушко, деловой портрет</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, бизнес-консультант</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Корпоративной академии Росатома, Москва</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Росатома, Екатеринбург-Экспо</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Глушко Даниил Дмитриевич в Шанхае, Пудун</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, студийный портрет</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на трейловом забеге на 100 км</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, деловой портрет</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/press/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/press/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/press/"/>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom Corporate Academy round table, Moscow</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom round table, Ekaterinburg-Expo</image:title></image:image>
   </url>
   <url>
     <loc>https://glushko.works/ru/press/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/press/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/press/"/>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Корпоративной академии Росатома, Москва</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Росатома, Екатеринбург-Экспо</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://glushko.works/photos/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/photos/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/photos/"/>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, business consultant</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom Corporate Academy round table, Moscow</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a Rosatom round table, Ekaterinburg-Expo</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Daniil Dmitrievich Glushko in Shanghai, Pudong</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, studio portrait</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Daniil Dmitrievich Glushko at a 100 km trail race</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Daniil Dmitrievich Glushko, business portrait</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://glushko.works/ru/photos/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glushko.works/photos/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://glushko.works/ru/photos/"/>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, бизнес-консультант</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-rosatom.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Корпоративной академии Росатома, Москва</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-ekaterinburg-expo.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на круглом столе Росатома, Екатеринбург-Экспо</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-shanghai.jpg</image:loc><image:title>Глушко Даниил Дмитриевич в Шанхае, Пудун</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-portrait-studio.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, студийный портрет</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-trail-run.jpg</image:loc><image:title>Глушко Даниил Дмитриевич на трейловом забеге на 100 км</image:title></image:image>
+    <image:image><image:loc>https://glushko.works/images/daniil-glushko-business-portrait.jpg</image:loc><image:title>Глушко Даниил Дмитриевич, деловой портрет</image:title></image:image>
   </url>
 </urlset>
