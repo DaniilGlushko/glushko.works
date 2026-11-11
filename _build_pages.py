@@ -129,6 +129,7 @@ PERSON = {
         "https://t.me/finchmadeit",
         "https://roscongress.ru/speakers/glushko-daniil/",
         "https://tenchat.ru/glushko_daniil",
+        "https://www.facebook.com/yourfinch",
     ],
 }
 
@@ -255,6 +256,7 @@ ABOUT_BODY = f"""
           <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
           <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
           <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
+          <a href="https://www.facebook.com/yourfinch" rel="me">Facebook</a>
           <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
           <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
           <a href="/photos/" data-ru="/ru/photos/"><span lang="en">Photos</span><span lang="ru">Фото</span></a>
@@ -319,6 +321,7 @@ def press_body():
     <div class="links">
       <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
       <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
+          <a href="https://www.facebook.com/yourfinch" rel="me">Facebook</a>
       <a href="https://t.me/finchmadeit" rel="me">Telegram</a>
       <a href="https://roscongress.ru/speakers/glushko-daniil/"><span lang="en">Roscongress speaker profile</span><span lang="ru">Профиль спикера на Росконгрессе</span></a>
       <a href="/photos/" data-ru="/ru/photos/"><span lang="en">Photos of Daniil Glushko</span><span lang="ru">Фото Даниила Глушко</span></a>
@@ -342,6 +345,7 @@ PHOTOS_BODY = f"""
       <a href="/press/" data-ru="/ru/press/"><span lang="en">Publications and talks</span><span lang="ru">Публикации и выступления</span></a>
       <a href="https://www.linkedin.com/in/ddaniilglushko" rel="me">LinkedIn</a>
       <a href="https://tenchat.ru/glushko_daniil" rel="me">TenChat</a>
+          <a href="https://www.facebook.com/yourfinch" rel="me">Facebook</a>
     </div>
     <a class="btn" href="/#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
   </div>
