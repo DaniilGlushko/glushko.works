@@ -364,8 +364,8 @@ PAGES = {
     "press": {
         "en": ("Daniil Glushko — publications and talks",
                "Publications, interviews and talks by Daniil Glushko: Roscongress, AtomSkills, Sirius University, Rosatom Corporate Academy."),
-        "ru": ("Даниил Глушко — публикации и выступления",
-               "Публикации, интервью и выступления Даниила Глушко: Росконгресс, AtomSkills, Университет «Сириус», Корпоративная академия Росатома."),
+        "ru": ("Глушко Даниил Дмитриевич — публикации и выступления",
+               "Публикации, интервью и выступления Глушко Даниила Дмитриевича, бизнес-консультанта: Росконгресс, AtomSkills, Университет «Сириус», Корпоративная академия Росатома."),
         "body": press_body(),
     },
     "photos": {
