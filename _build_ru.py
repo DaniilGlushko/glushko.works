@@ -20,7 +20,7 @@ print("index.html updated")
 swaps = [
     ('<html lang="en" data-lang="en">', '<html lang="ru" data-lang="ru">'),
     ('<title>Daniil Glushko — Russia–Asia business consultant</title>',
-     '<title>Даниил Глушко — выход на рынки Азии и экспорт на Филиппины</title>'),
+     '<title>Даниил Глушко — российские компании в Азии, азиатские партнёры в России</title>'),
     ('<meta name="description" content="I help Russian companies enter Hong Kong, the Philippines and the Gulf, and Asian partners work in Russia. Partners, negotiations, export, through to the first shipment.">',
      '<meta name="description" content="Помогаю российским компаниям выйти на рынки Гонконга, Филиппин и Персидского залива: партнёры, переговоры, госорганы, экспорт. Сопровождаю до первой поставки.">'),
     ('<meta property="og:url" content="https://glushko.works/">',
