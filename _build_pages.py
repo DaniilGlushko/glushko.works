@@ -370,7 +370,7 @@ PAGES = {
         "en": ("Glushko Daniil Dmitrievich — photos",
                "Photos of Daniil Dmitrievich Glushko, business consultant: Rosatom round tables, forums, Shanghai, portraits."),
         "ru": ("Глушко Даниил Дмитриевич — фото",
-               "Фотографии Даниила Глушко, бизнес-консультанта: круглые столы Росатома, форумы, Шанхай, портреты."),
+               "Фотографии Глушко Даниила Дмитриевича, бизнес-консультанта: круглые столы Росатома, форумы, Шанхай, портреты."),
         "body": PHOTOS_BODY,
     },
 }
