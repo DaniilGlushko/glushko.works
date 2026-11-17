@@ -122,6 +122,7 @@ PERSON = {
     "jobTitle": "Cross-border business consultant, Russia and Asia",
     "description": "Business consultant helping Russian companies enter Hong Kong, the Philippines and the Gulf, and Asian partners work in Russia. Former head of department at Rosatom Corporate Academy.",
     "knowsLanguage": ["en", "ru"],
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Lomonosov Moscow State University, Faculty of Journalism", "alternateName": "МГУ имени М. В. Ломоносова, факультет журналистики"},
     "sameAs": [
         "https://www.linkedin.com/in/ddaniilglushko",
         "https://t.me/finchmadeit",
@@ -267,6 +268,10 @@ ABOUT_BODY = f"""
     </div>
     <h2 class="title"><span lang="en">Career</span><span lang="ru">Карьера</span></h2>
     {cases}
+    <h2 class="title"><span lang="en">Education</span><span lang="ru">Образование</span></h2>
+    <div class="tl">
+      <div class="tl-item"><span class="when">2019</span><h3><span lang="en">Lomonosov Moscow State University (MSU), Faculty of Journalism</span><span lang="ru">МГУ имени М. В. Ломоносова, факультет журналистики</span></h3><p><span lang="en">Public relations. Daniil Glushko is a graduate of the MSU Faculty of Journalism.</span><span lang="ru">Связи с общественностью. Даниил Глушко — выпускник журфака МГУ.</span></p></div>
+    </div>
     <a class="btn" href="/#contact"><span lang="en">Tell me about your deal</span><span lang="ru">Рассказать о задаче</span></a>
   </div>
 </main>
