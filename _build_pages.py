@@ -353,7 +353,7 @@ PHOTOS_BODY = f"""
 
 PAGES = {
     "about": {
-        "en": ("Daniil Glushko — business consultant, Russia and Asia",
+        "en": ("Glushko Daniil Dmitrievich — business consultant, Russia and Asia",
                "Daniil Dmitrievich Glushko: cross-border business consultant. Russian companies in Hong Kong, the Philippines and the Gulf; Asian partners in Russia. Biography, career, contacts."),
         "ru": ("Глушко Даниил Дмитриевич — бизнес-консультант, Россия и Азия",
                "Глушко Даниил Дмитриевич: консультант по выходу российских компаний в Гонконг, на Филиппины и в страны Залива и по работе азиатских партнёров в России. Биография, карьера, контакты."),
