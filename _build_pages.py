@@ -361,11 +361,11 @@ PAGES = {
         "en": ("Glushko Daniil Dmitrievich — business consultant, Russia and Asia",
                "Daniil Dmitrievich Glushko: cross-border business consultant. Russian companies in Hong Kong, the Philippines and the Gulf; Asian partners in Russia. Biography, career, contacts."),
         "ru": ("Глушко Даниил Дмитриевич — бизнес-консультант, Россия и Азия",
-               "Глушко Даниил Дмитриевич: консультант по выходу российских компаний в Гонконг, на Филиппины и в страны Залива и по работе азиатских партнёров в России. Биография, карьера, контакты."),
+               "Глушко Даниил Дмитриевич: консультант по выходу российских компаний в Гонконг, на Филиппины и в страны Залива и по работе азиатских партнёров в России. Выпускник журфака МГУ. Биография, карьера, контакты."),
         "body": ABOUT_BODY,
     },
     "press": {
-        "en": ("Daniil Glushko — publications and talks",
+        "en": ("Glushko Daniil Dmitrievich — publications and talks",
                "Publications, interviews and talks by Daniil Glushko: Roscongress, AtomSkills, Sirius University, Rosatom Corporate Academy."),
         "ru": ("Глушко Даниил Дмитриевич — публикации и выступления",
                "Публикации, интервью и выступления Глушко Даниила Дмитриевича, бизнес-консультанта: Росконгресс, AtomSkills, Университет «Сириус», Корпоративная академия Росатома."),
