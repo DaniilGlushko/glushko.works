@@ -34,7 +34,8 @@ header = (header.replace('href="#top"', 'href="/"')
 # Russian sub-pages link to the Russian home page and sub-pages
 def to_ru(fragment):
     return (fragment.replace('href="/#', 'href="/ru/#').replace('href="/"', 'href="/ru/"')
-            .replace('href="/press/"', 'href="/ru/press/"').replace('href="/about/"', 'href="/ru/about/"'))
+            .replace('href="/press/"', 'href="/ru/press/"').replace('href="/about/"', 'href="/ru/about/"')
+            .replace('href="/photos/"', 'href="/ru/photos/"'))
 
 
 # Bio and career for /about/. Kept here (not on the home page) so the about page

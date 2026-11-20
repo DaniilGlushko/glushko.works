@@ -43,6 +43,7 @@ swaps = [
 swaps += [
     ('href="/about/"', 'href="/ru/about/"'),
     ('href="/press/"', 'href="/ru/press/"'),
+    ('href="/photos/"', 'href="/ru/photos/"'),
 ]
 
 for old, new in swaps:
